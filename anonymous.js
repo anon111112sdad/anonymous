@@ -4,7 +4,7 @@
   const grid = document.querySelector('#anonymous-grid');
   if (!media || !grid) return;
 
-  const entries = media;
+  const entries = [...media, ...(window.ANONYMOUS_DMD250_VIDEOS || [])];
   const category = item => item.category;
   const duration = seconds => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 
@@ -20,7 +20,7 @@
     video.playsInline = true;
     video.preload = 'none';
     video.poster = item.poster;
-    video.setAttribute('aria-label', `Anonymous video ${number}`);
+    video.setAttribute('aria-label', item.title || `Anonymous video ${number}`);
     const source = document.createElement('source');
     source.src = item.src;
     source.type = 'video/mp4';
@@ -29,7 +29,7 @@
     caption.className = 'anonymous-caption';
     const title = document.createElement('h2');
     const groupIndex = item.group ? entries.slice(0, index).filter(entry => entry.group === item.group).length : -1;
-    title.textContent = item.group === 'comparison' ? `Video ${number} - ${groupIndex === 0 ? 'A' : 'B'}` : `Video ${number}`;
+    title.textContent = item.title || (item.group === 'comparison' ? `Video ${number} - ${groupIndex === 0 ? 'A' : 'B'}` : `Video ${number}`);
     const length = document.createElement('span');
     length.textContent = duration(item.duration);
     caption.append(title, length);
