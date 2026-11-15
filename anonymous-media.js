@@ -9,12 +9,7 @@ window.ANONYMOUS_VIDEOS = [
   {category:'scenes', duration:56, src:'assets/media/heaven.mp4', poster:'assets/posters/heaven.webp'},
   {category:'scenes', duration:14, src:'assets/media/river.mp4', poster:'assets/posters/river.webp'},
   {category:'scenes', duration:14, src:'assets/media/meadow.mp4', poster:'assets/posters/meadow.webp'},
-  {category:'extended', duration:60, src:'assets/media/aerial60.mp4', poster:'assets/posters/aerial60.webp'},
-  {category:'extended', duration:120, src:'assets/media/aerial120.mp4', poster:'assets/posters/aerial120.webp'},
-  {category:'extended', duration:60, src:'assets/media/aerial60b.mp4', poster:'assets/posters/aerial60b.webp'},
-  {category:'control', group:'engine', duration:30, src:'assets/media/warm.mp4', poster:'assets/posters/warm.webp'},
-  {category:'control', group:'engine', duration:30, src:'assets/media/cool.mp4', poster:'assets/posters/cool.webp'},
-  {category:'control', group:'engine', duration:30, src:'assets/media/branch.mp4', poster:'assets/posters/branch.webp'},
-  {category:'control', group:'comparison', duration:14, src:'assets/media/control-result.mp4', poster:'assets/posters/control-result.webp'},
-  {category:'control', group:'comparison', duration:14, src:'assets/media/city-depth.mp4', poster:'assets/posters/city-depth.webp'}
+  {category:'control', group:'engine', title:'Video 14', duration:30, src:'assets/media/warm.mp4', poster:'assets/posters/warm.webp'},
+  {category:'control', group:'engine', title:'Video 15', duration:30, src:'assets/media/cool.mp4', poster:'assets/posters/cool.webp'},
+  {category:'control', group:'engine', title:'Video 16', duration:30, src:'assets/media/branch.mp4', poster:'assets/posters/branch.webp'}
 ];
