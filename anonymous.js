@@ -20,11 +20,43 @@
     video.playsInline = true;
     video.preload = 'none';
     video.poster = item.poster;
+    video.hidden = true;
     video.setAttribute('aria-label', item.title || `Anonymous video ${number}`);
+    const preview = document.createElement('img');
+    preview.className = 'anonymous-poster';
+    preview.src = item.poster;
+    preview.alt = `Preview of ${item.title || `video ${number}`}`;
+    preview.loading = index < 6 ? 'eager' : 'lazy';
+    preview.decoding = 'async';
+    const play = document.createElement('button');
+    play.type = 'button';
+    play.className = 'anonymous-play';
+    play.setAttribute('aria-label', `Play ${item.title || `video ${number}`}`);
+    play.innerHTML = '<span aria-hidden="true">&#9654;</span><span>Play</span>';
+    const player = document.createElement('div');
+    player.className = 'anonymous-player';
+    video.addEventListener('loadeddata', () => { preview.hidden = true; });
+    video.addEventListener('error', () => {
+      video.hidden = true;
+      preview.hidden = false;
+      play.hidden = false;
+    });
+    play.addEventListener('click', () => {
+      if (item.group === 'comparison') {
+        grid.querySelector('.anonymous-sync-toggle')?.click();
+        return;
+      }
+      video.hidden = false;
+      video.preload = 'auto';
+      play.hidden = true;
+      video.load();
+      video.play().catch(() => {});
+    });
     const source = document.createElement('source');
     source.src = item.src;
     source.type = 'video/mp4';
     video.append(source);
+    player.append(video, preview, play);
     const caption = document.createElement('div');
     caption.className = 'anonymous-caption';
     const title = document.createElement('h2');
@@ -33,7 +65,7 @@
     const length = document.createElement('span');
     length.textContent = duration(item.duration);
     caption.append(title, length);
-    card.append(video, caption);
+    card.append(player, caption);
     if (!item.group) grid.append(card);
     else {
       let group = groups.get(item.group);
@@ -80,6 +112,16 @@
         return;
       }
       if (master.ended) videos.forEach(video => { video.currentTime = 0; });
+      videos.forEach(video => {
+        video.hidden = false;
+        const player = video.closest('.anonymous-player');
+        player.querySelector('.anonymous-play').hidden = true;
+        if (video.dataset.initialized !== 'true') {
+          video.preload = 'auto';
+          video.load();
+          video.dataset.initialized = 'true';
+        }
+      });
       const results = await Promise.allSettled(videos.map(video => video.play()));
       if (results.some(result => result.status === 'rejected')) setPlaying(false);
     };
