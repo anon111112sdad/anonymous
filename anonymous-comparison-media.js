@@ -3,37 +3,37 @@ window.ANONYMOUS_COMPARISONS = [
     "id": "vdot-driving",
     "group": "vdot",
     "title": "Driving",
-    "duration": 30,
+    "duration": 5.041666666666667,
     "labels": [
       "VDOT",
       "Ours"
     ],
-    "src": "assets/media/comparisons/vdot-driving.mp4",
-    "poster": "assets/posters/comparisons/vdot-driving.webp"
+    "src": "assets/media/comparisons/vdot-driving.mp4?v=ab15946350e8",
+    "poster": "assets/posters/comparisons/vdot-driving.webp?v=b8e73c3a4b55"
   },
   {
     "id": "vdot-real_human",
     "group": "vdot",
     "title": "Human motion",
-    "duration": 30,
+    "duration": 5.041666666666667,
     "labels": [
       "VDOT",
       "Ours"
     ],
-    "src": "assets/media/comparisons/vdot-real_human.mp4",
-    "poster": "assets/posters/comparisons/vdot-real_human.webp"
+    "src": "assets/media/comparisons/vdot-real_human.mp4?v=3f5bc22ba73f",
+    "poster": "assets/posters/comparisons/vdot-real_human.webp?v=c0de00e15408"
   },
   {
     "id": "vdot-simulation",
     "group": "vdot",
     "title": "Simulation",
-    "duration": 30,
+    "duration": 5.041666666666667,
     "labels": [
       "VDOT",
       "Ours"
     ],
-    "src": "assets/media/comparisons/vdot-simulation.mp4",
-    "poster": "assets/posters/comparisons/vdot-simulation.webp"
+    "src": "assets/media/comparisons/vdot-simulation.mp4?v=ef14f88cd32b",
+    "poster": "assets/posters/comparisons/vdot-simulation.webp?v=d9da97e59d08"
   },
   {
     "id": "vdot-synthetic",

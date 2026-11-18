@@ -4,7 +4,7 @@
   const grid = document.querySelector('#comparison-grid');
   if (!grid || !entries.length) return;
   const descriptions = {
-    vdot: 'Four 30-second trajectories with the same source, initial reference, prompt, and depth trajectory. Left: VDOT with rolling reference images (4 steps per window). Right: ours with history projection (8 steps per window). Native outputs play at their original speed.',
+    vdot: 'Three 5-second paired clips and one 30-second synthetic-world comparison. Left: VDOT. Right: ours. Each pair uses the same source, initial reference, prompt, and depth trajectory, with 4 sampling steps for VDOT and 8 for ours. The 30-second example uses rolling reference images for VDOT and history projection for ours. All videos play at their original speed.',
     training: 'Matched inputs and noise, with 8 sampling steps in both panels. Left: before additional training (DMD0). Right: after 250 training updates (DMD250). Each clip preserves the complete 14.375-second output.',
     continuation: 'Matched 30-second outputs with the same first window, depth, prompt, and sampling budget. Left: full per-step history projection. Right: boundary-image-only continuation. Differences appear after the shared first window (14.375s).'
   };
@@ -17,7 +17,7 @@
     const title = document.createElement('h3');
     title.textContent = item.title;
     const length = document.createElement('span');
-    length.textContent = item.duration === 30 ? '30s' : '14.375s';
+    length.textContent = `${Number(item.duration.toFixed(3))}s`;
     header.append(title, length);
     const player = document.createElement('div');
     player.className = 'comparison-player';
