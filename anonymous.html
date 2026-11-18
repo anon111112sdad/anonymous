@@ -4,15 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101b20">
-  <meta name="description" content="Anonymous DMD250 video results at 5, 14, and 60 seconds.">
+  <meta name="description" content="Anonymous video comparisons: VDOT, before and after training, and 30-second continuation ablations.">
   <meta property="og:title" content="Anonymous Video Demonstrations">
-  <meta property="og:description" content="DMD250 results across short and long video sequences.">
+  <meta property="og:description" content="Side-by-side video comparisons and short and long video demonstrations.">
   <meta property="og:type" content="website">
   <meta name="robots" content="noindex, nofollow">
   <title>Anonymous Video Demonstrations</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="anonymous.css">
   <script src="anonymous-media.js" defer></script>
   <script src="anonymous-dmd250-media.js" defer></script>
+  <script src="anonymous-comparison-media.js" defer></script>
+  <script src="anonymous-comparisons.js" defer></script>
   <script src="anonymous.js" defer></script>
 </head>
 <body class="anonymous-page">
@@ -21,8 +24,20 @@
     <section class="anonymous-intro" aria-labelledby="anonymous-title">
       <p class="eyebrow">Supplementary videos</p>
       <h1 id="anonymous-title">Video demonstrations</h1>
-      <p>DMD250 results across 5s, 14s, and 60s sequences.</p>
+      <p>Side-by-side comparisons, followed by DMD250 results across 5s, 14s, and 60s sequences.</p>
     </section>
+    <section class="anonymous-comparisons" id="comparisons" aria-labelledby="comparisons-title">
+      <div class="comparison-heading"><h2 id="comparisons-title">Video comparisons</h2><a href="#demonstrations">Browse all demonstrations <span aria-hidden="true">&darr;</span></a></div>
+      <div class="comparison-filters" role="group" aria-label="Choose a video comparison">
+        <button class="comparison-filter active" data-comparison="vdot" aria-pressed="true" aria-controls="comparison-grid">VDOT comparison <span>30s</span></button>
+        <button class="comparison-filter" data-comparison="training" aria-pressed="false" aria-controls="comparison-grid">Before / after training <span>14s</span></button>
+        <button class="comparison-filter" data-comparison="continuation" aria-pressed="false" aria-controls="comparison-grid">Continuation ablation <span>30s</span></button>
+      </div>
+      <p class="comparison-description" id="comparison-description" aria-live="polite"></p>
+      <div class="comparison-grid" id="comparison-grid" aria-label="Side-by-side video comparisons"></div>
+      <noscript><p>Enable JavaScript to browse the comparison videos.</p></noscript>
+    </section>
+    <h2 class="demonstrations-title" id="demonstrations">Video demonstrations</h2>
     <div class="anonymous-toolbar"><div class="anonymous-filters" role="group" aria-label="Filter videos">
       <button class="anonymous-filter active" data-filter="all" aria-pressed="true">All videos</button>
       <button class="anonymous-filter" data-filter="5s" aria-pressed="false">5s</button>

@@ -5,3 +5,28 @@
 .anonymous-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 20px;padding-bottom:80px}.anonymous-video{min-width:0}.anonymous-player{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--night);border-radius:7px}.anonymous-player video,.anonymous-poster{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;background:var(--night)}.anonymous-player video::-webkit-media-controls-fullscreen-button,.anonymous-player video::-webkit-media-controls-picture-in-picture-button{display:none!important}.anonymous-player video::-webkit-media-controls-enclosure{overflow:hidden}.anonymous-poster{z-index:1}.anonymous-play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid rgb(255 255 255 / 70%);border-radius:5px;background:rgb(16 27 32 / 82%);color:#fff;font-size:12px;font-weight:650}.anonymous-play span:first-child{font-size:11px}.anonymous-play:hover{background:#172a30}.anonymous-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 2px}.anonymous-caption h2{font-size:13px;font-weight:650;margin:0}.anonymous-caption span{font:10px ui-monospace,monospace;color:var(--muted)}.anonymous-group{grid-column:1/-1;display:grid;gap:20px}.anonymous-group-engine{grid-template-columns:repeat(3,minmax(0,1fr))}.anonymous-group-title{grid-column:1/-1;font-size:17px;font-weight:650;margin:0}.anonymous-footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:10px}
 @media(max-width:800px){.anonymous-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.anonymous-container{width:calc(100% - 40px)}.anonymous-intro{padding:48px 0 28px}.anonymous-intro h1{font-size:34px}.anonymous-toolbar{align-items:flex-start;flex-direction:column;gap:12px}.anonymous-grid{grid-template-columns:1fr;gap:21px;padding-bottom:55px}.anonymous-group-engine{grid-template-columns:1fr}.anonymous-header{font-size:10px}}
+
+.anonymous-comparisons{padding-bottom:48px;margin-bottom:42px;border-bottom:1px solid var(--line)}
+.comparison-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:22px}
+.comparison-heading h2,.demonstrations-title{font-size:24px;font-weight:650;margin:0}
+.comparison-heading a{color:var(--teal);font-size:12px;text-decoration:none}
+.comparison-heading a:hover{text-decoration:underline}
+.comparison-heading a:focus-visible{outline:3px solid #3f9b8b;outline-offset:4px}
+.comparison-filters{display:flex;gap:10px;flex-wrap:wrap}
+.comparison-filter{border:1px solid var(--line);border-radius:6px;padding:12px 16px;background:#fff;color:var(--body);font-size:13px;font-weight:650}
+.comparison-filter span{font-size:10px;font-weight:500;margin-left:10px;opacity:.8}
+.comparison-filter.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.comparison-description{font-size:13px;line-height:1.8;color:var(--body);max-width:1000px;margin:20px 0 26px}
+.comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 22px}
+.comparison-card{min-width:0}
+.comparison-card-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:10px}
+.comparison-card-heading h3{font-size:14px;font-weight:650;margin:0}
+.comparison-card-heading>span{font:11px ui-monospace,monospace;color:var(--muted)}
+.comparison-player{position:relative;aspect-ratio:1440/456;background:var(--night);border-radius:6px;overflow:hidden}
+.comparison-player video{display:block;width:100%;height:100%;object-fit:contain}
+.comparison-player .anonymous-play{font-size:11px;padding:9px 12px;white-space:nowrap}
+.comparison-labels{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:center;color:var(--body);font-size:11px;line-height:1.5;padding-top:9px}
+.demonstrations-title{margin-bottom:24px;scroll-margin-top:24px}
+@media(max-width:900px){.comparison-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.comparison-heading{align-items:flex-start;flex-direction:column;gap:12px}.comparison-heading h2,.demonstrations-title{font-size:22px}.comparison-filters{gap:7px}.comparison-filter{padding:10px 12px;font-size:12px}.comparison-description{font-size:12px}.comparison-labels{font-size:10px}.comparison-player .anonymous-play{padding:7px 10px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
